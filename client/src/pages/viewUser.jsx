@@ -5,13 +5,14 @@ import axios from 'axios'
 export default function ViewUser() {
     const headers = ['First Name', 'Last Name', 'Email', 'Phone', 'Password', 'Update', 'Delete']
     const [users, setUsers] = useState();
+    const ip = '107.21.206.241'
 
     async function getData() {
-        await axios.get(`http://localhost:3001/viewuser`).then((response) => setUsers(response.data))
+        await axios.get(`http://${ip}:3001/viewuser`).then((response) => setUsers(response.data))
     }
 
     async function handleDeleteUser(id) {
-        await axios.delete(`http://localhost:3001/delete/${id}`);
+        await axios.delete(`http://${ip}:3001/delete/${id}`);
         await getData();
     }
 

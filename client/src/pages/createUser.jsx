@@ -4,6 +4,7 @@ import axios from 'axios'
 
 export default function CreateUser() {
     const [values,setValues] = useState();
+    const ip = '107.21.206.241'
 
     const handleChangeValues = (value) => {
         setValues((prevValue) => ({
@@ -17,7 +18,7 @@ export default function CreateUser() {
     }
 
     function handleClickButton() {
-        axios.post(`http://localhost:3001/create`, {
+        axios.post(`http://${ip}:3001/create`, {
             first_name: values.firstname,
             last_name: values.lastname,
             email: values.email,

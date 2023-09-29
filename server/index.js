@@ -1,29 +1,12 @@
 const express = require('express');
 const cors = require('cors')
-const os = require('os');
-const mariadb = require('mariadb');
-
-const networkInterfaces = os.networkInterfaces();
-let ipAddress;
-
-for (const interfaceName in networkInterfaces) {
-    const networkInterface = networkInterfaces[interfaceName];
-    for (const network of networkInterface) {
-        if (network.family === 'IPv4' && !network.internal) {
-            ipAddress = network.address;
-            break;
-        }
-    }
-    if (ipAddress) break;
-}
-
-console.log('Endereço IP da sua máquina:', ipAddress);
+const mariadb = require('mariadb')
 
 const app = express();
 const PORT = 3001;
 
 const pool = mariadb.createPool({
-    host: ipAddress,
+    host: '107.21.206.241',
     user: 'fatec',
     password: '11',
     database: 'exemplo'
