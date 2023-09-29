@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import ip from 'ip';
-const localIP = ip.address();
 
 export default function UpdateUser() {
 
@@ -15,7 +13,7 @@ export default function UpdateUser() {
     const [password, setPassword] = useState('')
 
     async function getData() {
-        await axios.get(`http://${localIP}:3001/user/${id}`).then((response) => {
+        await axios.get(`http://localhost:3001/user/${id}`).then((response) => {
             const userData = response.data[0];
             setFirstName(userData.first_name)
             setLastName(userData.last_name)

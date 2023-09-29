@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 import axios from 'axios'
-import ip from 'ip';
-const localIP = ip.address();
 
 export default function CreateUser() {
     const [values,setValues] = useState();
@@ -19,7 +17,7 @@ export default function CreateUser() {
     }
 
     function handleClickButton() {
-        axios.post(`http://${localIP}:3001/create`, {
+        axios.post(`http://localhost:3001/create`, {
             first_name: values.firstname,
             last_name: values.lastname,
             email: values.email,
