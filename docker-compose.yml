@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  server:
+    image: imagem-server
+    container_name: container-servidor
+    command: npm install
+    ports:
+      - "3001:3001"
+    entrypoint: npm run dev
+  client:
+    image: imagem-client
+    container_name: container-front
+    command: npm install
+    ports:
+      - "3000:3000"
+    entrypoint: npm run start

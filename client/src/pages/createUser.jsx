@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export default function CreateUser() {
     const [values,setValues] = useState();
-    const ip = '107.21.206.241'
+    const ip = '172.20.10.9'
 
     const handleChangeValues = (value) => {
         setValues((prevValue) => ({

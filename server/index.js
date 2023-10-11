@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3001;
 
 const pool = mariadb.createPool({
-    host: '107.21.206.241',
+    host: '172.20.10.9',
     user: 'fatec',
     password: '11',
     database: 'exemplo'

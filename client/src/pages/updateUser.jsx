@@ -10,7 +10,7 @@ export default function UpdateUser() {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
-    const ip = '107.21.206.241'
+    const ip = '172.20.10.9'
 
     async function getData() {
         await axios.get(`http://${ip}:3001/user/${id}`).then((response) => {
